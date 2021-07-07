@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB71D326-1106-4915-928B-33CA9C12648F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>hospi_hospital_only</RootNamespace>
+    <AssemblyName>Hospi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>HospiIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckMasterPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckMasterPW.Designer.cs">
+      <DependentUpon>CheckMasterPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckUpdateMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckUpdateMode.Designer.cs">
+      <DependentUpon>CheckUpdateMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBClass.cs" />
+    <Compile Include="FBKey.cs" />
+    <Compile Include="Fcm.cs" />
+    <Compile Include="Hospital_SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital_SignUp.Designer.cs">
+      <DependentUpon>Hospital_SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inquiry.cs" />
+    <Compile Include="InquiryCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InquiryCheck.Designer.cs">
+      <DependentUpon>InquiryCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospital_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital_Setting.Designer.cs">
+      <DependentUpon>Hospital_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterAdd.Designer.cs">
+      <DependentUpon>MasterAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterDelete.Designer.cs">
+      <DependentUpon>MasterDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterInfomation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterInfomation.Designer.cs">
+      <DependentUpon>MasterInfomation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterMenu.Designer.cs">
+      <DependentUpon>MasterMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterPassword.Designer.cs">
+      <DependentUpon>MasterPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notice.Designer.cs">
+      <DependentUpon>Notice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoticeInfo.Designer.cs">
+      <DependentUpon>NoticeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Office.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Office.Designer.cs">
+      <DependentUpon>Office.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeRadiography.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfficeRadiography.Designer.cs">
+      <DependentUpon>OfficeRadiography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Office_WaitingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Office_WaitingList.Designer.cs">
+      <DependentUpon>Office_WaitingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientSetting.Designer.cs">
+      <DependentUpon>PatientSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prescription.Designer.cs">
+      <DependentUpon>Prescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrescriptionList.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AddRadiography.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRadiography.Designer.cs">
+      <DependentUpon>AddRadiography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reception.Designer.cs">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceptionList.cs" />
+    <Compile Include="Reception_HistoryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reception_HistoryInfo.Designer.cs">
+      <DependentUpon>Reception_HistoryInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist.Designer.cs">
+      <DependentUpon>Receptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceptionUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceptionUpdate.Designer.cs">
+      <DependentUpon>ReceptionUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reception_First.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reception_First.Designer.cs">
+      <DependentUpon>Reception_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reserve.cs" />
+    <Compile Include="ReserveCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReserveCancel.Designer.cs">
+      <DependentUpon>ReserveCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchAddress.Designer.cs">
+      <DependentUpon>SearchAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="SignUp.cs" />
+    <Compile Include="UpdateMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMedicine.Designer.cs">
+      <DependentUpon>UpdateMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateReceptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateReceptionist.Designer.cs">
+      <DependentUpon>UpdateReceptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateSubject.Designer.cs">
+      <DependentUpon>UpdateSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="Visitor.cs" />
+    <Content Include="Hospi.ico" />
+    <Content Include="HospiIcon.ico" />
+    <Content Include="Resources\Licence.txt" />
+    <EmbeddedResource Include="CheckMasterPW.resx">
+      <DependentUpon>CheckMasterPW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckUpdateMode.resx">
+      <DependentUpon>CheckUpdateMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital_SignUp.resx">
+      <DependentUpon>Hospital_SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquiryCheck.resx">
+      <DependentUpon>InquiryCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospital_Setting.resx">
+      <DependentUpon>Hospital_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterAdd.resx">
+      <DependentUpon>MasterAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterDelete.resx">
+      <DependentUpon>MasterDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterInfomation.resx">
+      <DependentUpon>MasterInfomation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterMenu.resx">
+      <DependentUpon>MasterMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterPassword.resx">
+      <DependentUpon>MasterPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notice.resx">
+      <DependentUpon>Notice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoticeInfo.resx">
+      <DependentUpon>NoticeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Office.resx">
+      <DependentUpon>Office.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfficeRadiography.resx">
+      <DependentUpon>OfficeRadiography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Office_WaitingList.resx">
+      <DependentUpon>Office_WaitingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientSetting.resx">
+      <DependentUpon>PatientSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prescription.resx">
+      <DependentUpon>Prescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="AddRadiography.resx">
+      <DependentUpon>AddRadiography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reception.resx">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist.resx">
+      <DependentUpon>Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionUpdate.resx">
+      <DependentUpon>ReceptionUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reception_First.resx">
+      <DependentUpon>Reception_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reception_HistoryInfo.resx">
+      <DependentUpon>Reception_HistoryInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReserveCancel.resx">
+      <DependentUpon>ReserveCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchAddress.resx">
+      <DependentUpon>SearchAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMedicine.resx">
+      <DependentUpon>UpdateMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateReceptionist.resx">
+      <DependentUpon>UpdateReceptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateSubject.resx">
+      <DependentUpon>UpdateSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\BaseFileResource.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle">
+      <Version>1.8.9</Version>
+    </PackageReference>
+    <PackageReference Include="FirebaseAdmin">
+      <Version>2.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Google.Apis.Auth">
+      <Version>1.51.0</Version>
+    </PackageReference>
+    <PackageReference Include="Google.Cloud.Firestore">
+      <Version>2.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Google.Protobuf">
+      <Version>3.17.3</Version>
+    </PackageReference>
+    <PackageReference Include="GrapeCity.Documents.Excel">
+      <Version>4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="GrapeCity.Documents.Pdf">
+      <Version>4.1.0.660</Version>
+    </PackageReference>
+    <PackageReference Include="Grpc.Auth">
+      <Version>2.38.0</Version>
+    </PackageReference>
+    <PackageReference Include="Grpc.Core">
+      <Version>2.38.0</Version>
+    </PackageReference>
+    <PackageReference Include="iTextSharp">
+      <Version>5.5.13.2</Version>
+    </PackageReference>
+    <PackageReference Include="K4os.Compression.LZ4.Streams">
+      <Version>1.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies">
+      <Version>1.0.2</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472">
+      <Version>1.0.2</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Office.Interop.Excel">
+      <Version>15.0.4795.1000</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.19041.1</Version>
+    </PackageReference>
+    <PackageReference Include="MySql.Data">
+      <Version>8.0.25</Version>
+    </PackageReference>
+    <PackageReference Include="MySqlConnector">
+      <Version>1.3.9</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="PdfSharp">
+      <Version>1.50.5147</Version>
+    </PackageReference>
+    <PackageReference Include="Spire.XLS">
+      <Version>11.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="SSH.NET">
+      <Version>2020.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Collections.Immutable">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Linq.Async">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.WindowsRuntime">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="WindowsAPICodePack">
+      <Version>1.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
